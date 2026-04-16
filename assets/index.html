@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Issues Tracker Login</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f6f8fa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.login-box{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.logo{
+    font-size:40px;
+}
+
+h2{
+    margin:10px 0 5px;
+}
+
+.subtitle{
+    color:gray;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    text-align:left;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.default{
+    font-size:12px;
+    color:gray;
+    text-align:left;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:6px;
+    background:linear-gradient(90deg,#4a6cf7,#3a4ff7);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.or{
+    margin:15px 0;
+    color:gray;
+}
+
+.demo{
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+    <img src="/assets/github-logo.png" alt="">
+</div>
+
+<h2>GitHub Issues Tracker</h2>
+<p class="subtitle">Sign in to manage your Issues</p>
+
+<form id="loginForm">
+
+<label>Username</label>
+<input type="text" id="username" placeholder="Enter Username">
+<p class="default">Default: admin</p>
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter Password">
+<p class="default">Default: admin123</p>
+
+<button type="submit">Sign In</button>
+
+</form>
+
+<p class="or">OR</p>
+
+<div class="demo">
+<p>Demo Credentials:</p>
+<b>Username:</b> admin <br>
+<b>Password:</b> admin123
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+    e.preventDefault();
+
+    let user=document.getElementById("username").value;
+    let pass=document.getElementById("password").value;
+
+    if(user==="admin" && pass==="admin123"){
+        alert("Login Successful ✅");
+        window.location.href = "indexB.html";
+    }else{
+        alert("Wrong Username or Password ❌");
+    }
+
+});
+
+</script>
+
+</body>
+</html>

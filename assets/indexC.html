@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Issue Tracker</title>
+  <link rel="stylesheet" href="/styleC.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="logo" href="#">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 2v3m0 14v3M4.22 4.22l2.12 2.12m11.32 11.32 2.12 2.12M2 12h3m14 0h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+    </svg>
+    IssueTracker
+  </a>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search issues…" />
+    <button class="search-btn" onclick="doSearch()">Search</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="switchTab('all')">All</button>
+    <button class="tab-btn" onclick="switchTab('open')">Open</button>
+    <button class="tab-btn" onclick="switchTab('closed')">Closed</button>
+  </div>
+
+  <!-- ISSUE HEADER -->
+  <div class="issues-header">
+    <div class="issues-count">
+      <span id="countLabel">Loading…</span>
+    </div>
+
+    <div class="status-badges">
+      <div class="badge-dot">
+        <div class="dot open"></div>
+        <span id="openCount">—</span> Open
+      </div>
+
+      <div class="badge-dot">
+        <div class="dot closed"></div>
+        <span id="closedCount">—</span> Closed
+      </div>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards-container">
+    <div id="cardsGrid" class="cards-grid">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Fetching issues…</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" onclick="closeModal()">✖</button>
+    </div>
+
+    <div class="modal-body" id="modalBody"></div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
