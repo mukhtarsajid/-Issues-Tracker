@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>githab</title>
-    <link rel="stylesheet" href="styleC.css">
+    <link rel="stylesheet" href="styleB.css">
  </head>
  <body>
     <div class="buttons">
@@ -13,14 +13,33 @@
   <button id="closed">Closed</button>
 </div>
 
+
 <!-- Count Box -->
+
 <div class="issue-summary">
+  <div class="left">
+  <img src="Aperture.png" alt="">
+  <div>
   <h2><span id="issueCount">0</span> Issues</h2>
   <p>Track and manage your project issues</p>
+  </div>
+  </div> <!-- left -->  
+  <div class="status-badges">
+      <div class="badge-dot">
+        <div class="dot open"></div>
+        <span id="openCount"></span> Open
+      </div>
+
+      <div class="badge-dot">
+        <div class="dot closed"></div>
+        <span id="closedCount"></span> Closed
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="container"></div>
 
-<script src="problem6.js"></script>
+<script src="sriptB.js"></script>
  </body>
  </html>
